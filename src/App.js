@@ -13,18 +13,18 @@ function App() {
   };
 
   const [myStyle, setStyle] = useState(light);
-  const [darkMode, setDarkMode] = useState("On Dark Mode");
+  const [darkMode, setDarkMode] = useState("Dark Mode");
   const darkMoreFun = () => {
     if (myStyle.backgroundColor === "white") {
       setStyle(dark);
-      setDarkMode("On Light Mode");
+      setDarkMode("Light Mode");
       showAleart("Dark Mode", "success")
       setTimeout(()=>{
         setAleart(null)
       }, 1500)
     } else {
       setStyle(light);
-      setDarkMode("On Dark Mode");
+      setDarkMode("Dark Mode");
       showAleart("Light Mode", "success")
       setTimeout(()=>{
         setAleart(null)
@@ -48,6 +48,7 @@ function App() {
       setMOde(false);
       setModeStatus("Light Mode");
       setStyle(dark);
+      setDarkMode("Light Mode")
       showAleart("Dark Mode", "success")
       setTimeout(()=>{
         setAleart(null)
@@ -57,6 +58,7 @@ function App() {
       setMOde(true);
       setModeStatus("Dark Mode");
       setStyle(light);
+      setDarkMode("Dark Mode")
       showAleart("Light Mode", "success")
       setTimeout(()=>{
         setAleart(null)

@@ -29,6 +29,28 @@ export default function TextArea(props) {
       props.setAleart(null)
     }, 1500)
   }
+
+  const totalWord = ()=>{
+    let list = text.split(" ")
+    let count = 0
+    list.forEach(ele=>{
+      if (ele){
+        count++;
+      }
+    });
+    return count;
+  }
+
+  const totalChar = ()=>{
+    let list = Array.from(text);
+    let count = 0
+    list.forEach(ch=>{
+      if (ch !==" "){
+        count++;
+      }
+    });
+    return count;
+  }
   
   return (
     <>
@@ -62,7 +84,7 @@ export default function TextArea(props) {
       </div>
       <div className="container my-2" style={props.myStyle}>
         <h2>Your Text Summary</h2>
-        <p>Total word: {text.split(" ").length} and total charecter: {text.length} and It will take average reading time is {text.split(" ").length * 0.01} minute as per 100 word per minute</p>
+        <p>Total word: {totalWord()} and total charecter: {totalChar()} and It will take average reading time is {totalWord() * 0.01} minute as per 100 word per minute</p>
         <h2>Your Text: </h2>
         <p style={{wordBreak: "break-word"}}>{text.length? text : "Please give some text on textArea"}</p>
       </div>
