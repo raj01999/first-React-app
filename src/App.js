@@ -79,8 +79,8 @@ function App() {
       />
         <Aleart aleart= {aleart} />
         <Routes>
-          <Route exact path="/about" component={<About/>} />
-          <Route exact path="/text" component={
+          <Route path="/about" element={<About/>} />
+          <Route path="/text" element={
             <TextArea
             hedding="Enter the text here"
             darkMoreFun={darkMoreFun}
