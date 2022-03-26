@@ -2,6 +2,8 @@ import Navbar from "./component/Navbar";
 import TextArea from "./component/TextArea";
 import { useState } from "react";
 import Aleart from "./component/Aleart";
+import About from "./component/About"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   const dark = {
     backgroundColor: "#686868",
@@ -68,6 +70,7 @@ function App() {
 
   return (
     <>
+    <BrowserRouter>
       <Navbar
         title="Word Changer"
         mode={mode}
@@ -75,14 +78,20 @@ function App() {
         modeStatus={modeStatus}
       />
         <Aleart aleart= {aleart} />
-        <TextArea
-          hedding="Enter the text here"
-          darkMoreFun={darkMoreFun}
-          myStyle={myStyle}
-          darkMode={darkMode}
-          showAleart ={showAleart}
-          setAleart = {setAleart}
-        />
+        <Routes>
+          <Route exact path="/about" component={<About/>} />
+          <Route exact path="/text" component={
+            <TextArea
+            hedding="Enter the text here"
+            darkMoreFun={darkMoreFun}
+            myStyle={myStyle}
+            darkMode={darkMode}
+            showAleart ={showAleart}
+            setAleart = {setAleart}
+          />
+          } />
+        </Routes>
+        </BrowserRouter>
     </>
   );
 }

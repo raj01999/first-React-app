@@ -4,7 +4,7 @@ export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode? "light":"dark"} bg-${props.mode? "light":"dark"}`}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/" onClick={e=>{e.preventDefault()}}>
+        <a className="navbar-brand" href="/text" onClick={e=>{e.preventDefault()}}>
           {props.title}
         </a>
         <button
@@ -21,12 +21,12 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/" onClick={e=>{e.preventDefault()}}>
+              <a className="nav-link active" aria-current="page" href="/text" onClick={e=>{e.preventDefault()}}>
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/" onClick={e=>{e.preventDefault()}}>
+              <a className="nav-link" href="/about" onClick={e=>{e.preventDefault()}}>
                 About
               </a>
             </li>
