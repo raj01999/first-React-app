@@ -69,16 +69,16 @@ export default function TextArea(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className= "btn btn-primary" onClick={changeToUpper}>
+        <button className= "btn btn-primary my-1" onClick={changeToUpper}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-5" onClick={changeToLower}>
+        <button className="btn btn-primary mx-5 my-1" onClick={changeToLower}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary" onClick={clearText}>
+        <button className="btn btn-primary my-1" onClick={clearText}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-5" onClick={props.darkMoreFun}>
+        <button className="btn btn-primary mx-5 my-1" onClick={props.darkMoreFun}>
           {props.darkMode}
         </button>
       </div>
