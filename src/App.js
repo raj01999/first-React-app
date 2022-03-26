@@ -2,7 +2,7 @@ import Navbar from "./component/Navbar";
 import TextArea from "./component/TextArea";
 import { useState } from "react";
 import Aleart from "./component/Aleart";
-import About from "./component/About"
+import About from "./component/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   const dark = {
@@ -20,17 +20,17 @@ function App() {
     if (myStyle.backgroundColor === "white") {
       setStyle(dark);
       setDarkMode("Light Mode");
-      showAleart("Dark Mode", "success")
-      setTimeout(()=>{
-        setAleart(null)
-      }, 1500)
+      showAleart("Dark Mode", "success");
+      setTimeout(() => {
+        setAleart(null);
+      }, 1500);
     } else {
       setStyle(light);
       setDarkMode("Dark Mode");
-      showAleart("Light Mode", "success")
-      setTimeout(()=>{
-        setAleart(null)
-      }, 1500)
+      showAleart("Light Mode", "success");
+      setTimeout(() => {
+        setAleart(null);
+      }, 1500);
     }
   };
 
@@ -50,48 +50,68 @@ function App() {
       setMOde(false);
       setModeStatus("Light Mode");
       setStyle(dark);
-      setDarkMode("Light Mode")
-      showAleart("Dark Mode", "success")
-      setTimeout(()=>{
-        setAleart(null)
-      }, 1500)
+      setDarkMode("Light Mode");
+      showAleart("Dark Mode", "success");
+      setTimeout(() => {
+        setAleart(null);
+      }, 1500);
     } else {
       document.body.style.backgroundColor = "white";
       setMOde(true);
       setModeStatus("Dark Mode");
       setStyle(light);
-      setDarkMode("Dark Mode")
-      showAleart("Light Mode", "success")
-      setTimeout(()=>{
-        setAleart(null)
-      }, 1500)
+      setDarkMode("Dark Mode");
+      showAleart("Light Mode", "success");
+      setTimeout(() => {
+        setAleart(null);
+      }, 1500);
     }
   };
 
   return (
     <>
-    <BrowserRouter>
-      <Navbar
-        title="Word Changer"
-        mode={mode}
-        modeFun={changeMode}
-        modeStatus={modeStatus}
-      />
-        <Aleart aleart= {aleart} />
+      <BrowserRouter>
+        <Navbar
+          title="Word Changer"
+          mode={mode}
+          modeFun={changeMode}
+          modeStatus={modeStatus}
+        />
+        <Aleart aleart={aleart} />
         <Routes>
-          <Route path="/about" element={<About/>} />
-          <Route path="/text" element={
-            <TextArea
-            hedding="Enter the text here"
-            darkMoreFun={darkMoreFun}
-            myStyle={myStyle}
-            darkMode={darkMode}
-            showAleart ={showAleart}
-            setAleart = {setAleart}
+          <Route
+            path="/"
+            element={
+              <div
+                className="container"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "70vh",
+                  color: "red",
+                }}
+              >
+                Click Home or About
+              </div>
+            }
           />
-          } />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/text"
+            element={
+              <TextArea
+                hedding="Enter the text here"
+                darkMoreFun={darkMoreFun}
+                myStyle={myStyle}
+                darkMode={darkMode}
+                showAleart={showAleart}
+                setAleart={setAleart}
+              />
+            }
+          />
         </Routes>
-        </BrowserRouter>
+      </BrowserRouter>
     </>
   );
 }
